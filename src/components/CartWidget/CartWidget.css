@@ -1,0 +1,10 @@
+.CartWidget {
+    font-size: 18px;
+    color: rgb(138, 29, 240);
+    ;
+}
+
+.CartWidget span {
+    color: #8a1df0;
+    font-weight: bold;
+}
