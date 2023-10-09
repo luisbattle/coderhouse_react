@@ -1,9 +1,10 @@
 import { Container } from 'react-bootstrap'
-export default function ItemListContainer() {
+export default function ItemListContainer(props) {
+    const message = props.message
     return (
         <div>
             <Container>
-                Bienvenido a mi primera tienda
+                {message}
             </Container>
         </div>
     )
