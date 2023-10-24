@@ -20,12 +20,12 @@ npm run dev
 
 # Vistas
 - Productos
-![Vista Productos](/docs/vista-productos.png)
+![Vista Productos](./docs/vista-productos.png)
 
 - Detalle de producto
-![Vista Productos](/docs/detalle-de-producto.png)
+![Vista Productos](./docs/detalle-de-producto.png)
 
 
 ## Demo
-![alt text](/docs/demo-entrega-2.gif)
+![alt text](./docs/demo-entrega-2.gif)
 
