@@ -2,3 +2,20 @@
     color: rgb(138, 29, 240);
     font-weight: bold;
 }
+
+a:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.navbar-nav {
+    color: #5d5c5c;
+}
+
+.nav-link .active {
+    color: blueviolet;
+}

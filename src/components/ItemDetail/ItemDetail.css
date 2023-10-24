@@ -1,0 +1,15 @@
+.ItemDetailCounter {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.itemDetailContainer-image {
+    display: flex;
+    justify-content: center;
+}
+
+.itemDetail-image {
+    height: 300px;
+}
