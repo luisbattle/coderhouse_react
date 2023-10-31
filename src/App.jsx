@@ -8,25 +8,29 @@ import About from './components/About/About';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { CartContext, CartProvider } from "./context/CartContext"
 function App() {
 
   return (
-    <Container>
+    <>
       <BrowserRouter>
-        <NavBar />
-        <Routes>
-          {/* <Route path='/' element={<ItemListContainer message="Bienvenido a mi primer eCommerce" />} /> */}
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/products' element={<ItemListContainer />} />
-          <Route exact path='/product/:id' element={<ItemDetailContainer />} />
-          <Route exact path='/products/:category' element={<ItemListContainer />} />
-          <Route exact path='/about' element={<About />} />
-          <Route exact path='/cart' element={<Cart />} />
-          <Route path='*' element={<PageNotFound />} />
-        </Routes>
-        <Footer />
+        <CartProvider>
+          <NavBar />
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/products' element={<ItemListContainer />} />
+            <Route exact path='/product/:id' element={<ItemDetailContainer />} />
+
+            <Route exact path='/products/:category' element={<ItemListContainer />} />
+
+            <Route exact path='/about' element={<About />} />
+            <Route exact path='/cart' element={<Cart />} />
+            <Route path='*' element={<PageNotFound />} />
+          </Routes>
+          <Footer />
+        </CartProvider>
       </BrowserRouter>
-    </Container>
+    </>
   )
 }
 

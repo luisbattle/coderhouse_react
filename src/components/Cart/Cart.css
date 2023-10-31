@@ -1,0 +1,9 @@
+.CartContainer .cart-list {
+    display: flex;
+}
+
+.CartContainer .cart-list li {
+    color: blue;
+
+
+}

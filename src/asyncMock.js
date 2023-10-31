@@ -6,7 +6,7 @@ const products = [
         category: "deportes",
         image: "https://http2.mlstatic.com/D_NQ_NP_2X_912031-MLA54868894284_042023-F.webp",
         detail: "Zapatilla Running,  productos son 100% originales. Hacemos envíos a todos el país por mercado envíos",
-        price: "78900"
+        price: "10"
     },
     {
         id: 2,
