@@ -1,15 +1,16 @@
 import { useParams } from "react-router-dom"
-import { Button, Form } from "react-bootstrap"
+import { Button, Form, Alert } from "react-bootstrap"
+
 import "./ItemDetail.css"
 import { useContext, useState } from "react"
 
 // Context
 import { CartContext } from "../../context/CartContext"
-import { Key } from "react-bootstrap-icons"
 
 const ItemDetail = ({ products }) => {
     const { id } = useParams()
     const [quantity, setQuantity] = useState(1)
+    const [show, setShow] = useState(false)
 
     const { addItem } = useContext(CartContext)
 
@@ -30,8 +31,17 @@ const ItemDetail = ({ products }) => {
         addItem(productDetail[0], quantity)
     }
 
+    if (show) {
+        console.log("show alert")
+        return
+    }
     return (
         <>
+            <Alert key="1" variant="success">
+                Producto agregado al carrito correctamente
+                <Alert.Link href="/cart">Ir al carrito aqui</Alert.Link>. Give it a click if
+                you like.
+            </Alert>
             {
                 productDetail.map((product) => {
                     return (
@@ -54,6 +64,7 @@ const ItemDetail = ({ products }) => {
 
                             <div className="text-center mb-2">
                                 <Button onClick={handleOnAdd} >Add To Cart</Button>
+                                <Button onClick={() => setShow(true)} >showAlert</Button>
                             </div>
                         </div>
                     )

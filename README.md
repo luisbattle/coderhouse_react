@@ -18,6 +18,11 @@ npm run dev
 - ItemCount
 - UseEffect/Hooks/AsyncMock
 
+## Tercera entrega
+- Context
+    - Toda la aplicacion conozca toda la aplicacion y variables
+
+
 # Vistas
 - Productos
 ![Vista Productos](./docs/vista-productos.png)
@@ -29,3 +34,5 @@ npm run dev
 ## Demo
 ![alt text](./docs/demo-entrega-2.gif)
 
+# Docs Curso React
+https://pablomonteserin.com/curso/react/context-api/
