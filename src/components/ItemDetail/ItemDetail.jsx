@@ -37,11 +37,7 @@ const ItemDetail = ({ products }) => {
     }
     return (
         <>
-            <Alert key="1" variant="success">
-                Producto agregado al carrito correctamente
-                <Alert.Link href="/cart">Ir al carrito aqui</Alert.Link>. Give it a click if
-                you like.
-            </Alert>
+
             {
                 productDetail.map((product) => {
                     return (
@@ -64,7 +60,6 @@ const ItemDetail = ({ products }) => {
 
                             <div className="text-center mb-2">
                                 <Button onClick={handleOnAdd} >Add To Cart</Button>
-                                <Button onClick={() => setShow(true)} >showAlert</Button>
                             </div>
                         </div>
                     )
