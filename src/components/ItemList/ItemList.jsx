@@ -5,7 +5,6 @@ const ItemList = ({ products }) => {
 
     return (
         <div className="container">
-
             <h1 className="text-center">Productos</h1>
             <div className="card-container">
                 {products.map((product) =>
