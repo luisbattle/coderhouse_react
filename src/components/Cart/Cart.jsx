@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react"
 import { CartContext } from '../../context/CartContext'
-import { Button } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
+import { Trash } from 'react-bootstrap-icons';
+
 import "./Cart.css"
 
 const Cart = () => {
@@ -10,35 +12,74 @@ const Cart = () => {
 
     useEffect(() => {
         const calculateTotalAmount = () => {
-            console.log("CartItems: ", cart.length)
             const total = cart.reduce((acumulator, element) => acumulator + (parseInt(element.price) * element.quantity), 0)
-            console.log("Total ", total)
             setTotalAmount(total)
         }
         calculateTotalAmount()
     }, [cart])
 
-    // const removeItem = (productid) => {
-    //     console.log("removiendo item...", productid)
-    // }
+    // IDEA
+    // https://mdbootstrap.com/docs/standard/design-blocks/ecommerce/shopping-cart/
 
     return (
-        <div className='CartContainer'>
+        <Container>
             <h1 className='text-center'>Carrito</h1>
-            {cart.map((product) =>
-                <div>
-                    <ul className='cart-list'>
-                        <li>{product.name}  X {product.quantity} Unidades $ {product.price} = Subtotal ${product.price * product.quantity} </li>
+            <div className="row">
+                <div className="col-9">
+                    {
+                        cart.length > 0
+                            ? cart.map((product) =>
+                                <div className="cartListItem">
+                                    <div className="row">
+                                        <div className="col-2">
+                                            <img src={product.image} alt="" />
+                                        </div>
+                                        <div className="col-5">
+                                            <p>{product.name}</p>
+                                            <Trash className='btnCartRemoveItem' onClick={() => { removeItem(product.id) }} variant='danger' > X</Trash>
+                                        </div>
+                                        <div className="col-5 cartPrice">
+                                            <p>CANT: {product.quantity}</p>
+                                            <p>${product.price}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                            : <p>Tu carrito está vacío</p>
+                    }
 
-                        <Button className='btnCartRemoveItem' onClick={() => { removeItem(product.id) }} variant='danger' > X</Button>
-                    </ul>
                 </div>
-            )}
-            <p>Total: ${totalAmount}</p>
-            <Button onClick={clearCart}>Limpiar Carrito</Button>
-            <Button onClick={() => { alert("Gracias por su compra") }}>Checkout</Button>
 
-        </div>
+                <div className="col-3">
+                    <p>Monto total</p>
+                    <div className="row">
+                        <div className="col-6">
+                            <p>Envío</p>
+                        </div>
+                        <div className="col-6">
+                            <p>Gratis</p>
+                        </div>
+                        <hr class="hr" />
+                        <div className="row">
+                            <div className="col-6">
+                                Total...
+                            </div>
+                            <div className="col-6">
+                                ${totalAmount}
+                            </div>
+                        </div>
+                        <button className="btn btn-dark w-50 m-5 text-center"><a href="/checkout">Checkout</a></button>
+                    </div>
+
+                </div>
+            </div>
+            {
+                cart.length > 0
+                    ? <Button className="btn btn-dark mb-2" onClick={clearCart}>Limpiar Carrito</Button>
+                    : null
+            }
+
+        </Container>
     )
 }
 

@@ -17,7 +17,7 @@ export default function NavBar() {
                     {/* DropDown By Category */}
                     <Dropdown>
                         <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
-                            Categories
+                            Categorias
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item as={Link} to={"/products/deportes"}>Deportes</Dropdown.Item>
