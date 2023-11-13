@@ -23,7 +23,6 @@ const Cart = () => {
     }, [cart])
 
     const handleOnRemoveItem = (productId, productName) => {
-        console.log("ProductName: ", productName)
         removeItem(productId)
         alertRemoveItem(productName)
 

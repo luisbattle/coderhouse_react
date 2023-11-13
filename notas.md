@@ -1,8 +1,8 @@
 # TO-DO(Entrega Final)
 Fecha limite: 17/11/2023
 
-## Checkout
-- Incluir el checkout
+## Checkout(Done)
+- Incluir el checkout 
 - Guardar en DB
 
 

@@ -9,19 +9,7 @@ npm run dev
 ## Dependencias adicionales
 - react-bootstrap
 - react-bootstrap-icons
-
-## Entrega N2
-- Rutas
-- Vistas 
-    - Productos
-    - Detalle de producto
-- ItemCount
-- UseEffect/Hooks/AsyncMock
-
-## Tercera entrega
-- Context
-    - Toda la aplicacion conozca toda la aplicacion y variables
-
+- toastify
 
 # Vistas
 - Productos
@@ -30,9 +18,6 @@ npm run dev
 - Detalle de producto
 ![Vista Productos](./docs/detalle-de-producto.png)
 
-
 ## Demo
-![alt text](./docs/demo-entrega-2.gif)
+![alt text](./docs/demo-Ecommerce.gif)
 
-# Docs Curso React
-https://pablomonteserin.com/curso/react/context-api/
