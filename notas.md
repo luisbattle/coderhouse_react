@@ -2,7 +2,8 @@
 Fecha limite: 17/11/2023
 
 ## Checkout
-Incluir el checkout y guardar en DB
+- Incluir el checkout
+- Guardar en DB
 
 
 ## Comentarios en el codigo
@@ -11,8 +12,6 @@ Eliminar comentarios en el codigo
 ## Componente ItemCount
 - Agregar
 
-## Carrito de compras
-- Eliminar productos
 
 ## Formulario de contacto
 - Guardar en la DB el formulario
@@ -20,7 +19,7 @@ Eliminar comentarios en el codigo
 
 ## Mejoras opcionales
 
-### Footer
+### Footer- OK
 Dejar Footer posicionado en la parte de abajo
 
 ### Carrito

@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 import { Button, Container } from 'react-bootstrap'
 import { Trash } from 'react-bootstrap-icons';
+
 
 import "./Cart.css"
 
@@ -18,8 +20,6 @@ const Cart = () => {
         calculateTotalAmount()
     }, [cart])
 
-    // IDEA
-    // https://mdbootstrap.com/docs/standard/design-blocks/ecommerce/shopping-cart/
 
     return (
         <Container>
@@ -59,7 +59,7 @@ const Cart = () => {
                         <div className="col-6">
                             <p>Gratis</p>
                         </div>
-                        <hr class="hr" />
+                        <hr className="hr" />
                         <div className="row">
                             <div className="col-6">
                                 Total...
@@ -68,9 +68,20 @@ const Cart = () => {
                                 ${totalAmount}
                             </div>
                         </div>
-                        <button className="btn btn-dark w-50 m-5 text-center"><a href="/checkout">Checkout</a></button>
+                        {
+                            cart.length > 0
+                                ? <Button className='btn btn-dark' >
+                                    <Link to={`/checkout`} >
+                                        Checkout
+                                    </Link>
+                                </Button>
+                                : <Button className='btn btn-dark disabled' >
+                                    <Link to={`/checkout`} >
+                                        Checkout
+                                    </Link>
+                                </Button>
+                        }
                     </div>
-
                 </div>
             </div>
             {

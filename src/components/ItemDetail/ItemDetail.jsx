@@ -15,16 +15,17 @@ const ItemDetail = ({ product }) => {
 
 
     const addQuantity = () => {
+        event.preventDefault()
         setQuantity(quantity + 1)
     }
     const substractQuantity = () => {
+        event.preventDefault()
         if (quantity > 1) {
             setQuantity(quantity - 1)
         }
     }
 
     const handleOnAdd = () => {
-        console.log(product)
         addItem(product, quantity)
     }
 
@@ -41,15 +42,15 @@ const ItemDetail = ({ product }) => {
                 <p>{product.quantity}</p>
                 <div>
                     <Form className="ItemDetailCounter">
-                        <Button onClick={substractQuantity}>-</Button>
+                        <button className="btn btn-dark" onClick={substractQuantity}>-</button>
                         <Form.Text>{quantity}</Form.Text>
-                        <Button onClick={addQuantity}>+</Button>
+                        <button className="btn btn-dark" onClick={addQuantity}>+</button>
                     </Form>
 
                 </div>
 
                 <div className="text-center mb-2">
-                    <Button onClick={handleOnAdd} >Add To Cart</Button>
+                    <button className="btn btn-dark" onClick={handleOnAdd} >Add To Cart</button>
                 </div>
             </div>
         </>

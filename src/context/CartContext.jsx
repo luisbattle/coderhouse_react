@@ -12,7 +12,6 @@ export const CartProvider = ({ children }) => {
 
         // Item exist in Cart
         if (existInCart.length > 0) {
-            console.log("exist in cart: ", existInCart[0])
             // producto existe en mi carrito lo actualizo con la nueva cantidad
             cart.map((product) => {
                 if (product.id == existInCart[0].id) {
@@ -27,7 +26,6 @@ export const CartProvider = ({ children }) => {
     }
 
     const clearCart = () => {
-        console.log("clear all items in cart...")
         setCart([])
     }
 

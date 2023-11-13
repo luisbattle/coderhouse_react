@@ -10,6 +10,7 @@ import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartContext, CartProvider } from "./context/CartContext"
 import Checkout from './components/Checkout/Checkout';
+import OrderCompleted from './components/OderCompleted/OderCompleted';
 function App() {
 
   return (
@@ -25,6 +26,8 @@ function App() {
             <Route exact path='/about' element={<About />} />
             <Route exact path='/cart' element={<Cart />} />
             <Route exact path='/checkout' element={<Checkout />} />
+            <Route exact path='/order/:id' element={<OrderCompleted />} />
+
 
             <Route path='*' element={<PageNotFound />} />
           </Routes>

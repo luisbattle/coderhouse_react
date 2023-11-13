@@ -10,11 +10,12 @@ export default function ItemListContainer() {
     const { category } = useParams()
 
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+
 
     useEffect(() => {
         const db = getFirestore()
         const itemCollection = collection(db, "Products")
-        console.log("CATEGORY: ", category)
 
         if (!category) { //Get All product 
             getDocs(itemCollection)
@@ -22,9 +23,13 @@ export default function ItemListContainer() {
                     const docs = snapshot.docs.map((doc) => ({
                         id: doc.id, ...doc.data()
                     }))
-                    setProducts(
-                        docs
-                    )
+                    setTimeout(() => {
+                        setLoading(false)
+                        setProducts(
+                            docs
+                        )
+                    }, 900);
+
                 })
         } else { //Get products By Category(By UseParam)
             const q = query(itemCollection, where("category", "==", category))
@@ -46,7 +51,12 @@ export default function ItemListContainer() {
     return (
         <div>
             <Container>
-                <ItemList products={products} />
+                <ItemList products={products} loading={loading} />
+
+                {/* {
+                    loading ? <ItemList products="" loading={loading} />
+                        : <ItemList products={products} loading={loading} />
+                } */}
             </Container>
         </div>
     )

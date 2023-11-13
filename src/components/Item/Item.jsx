@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import { Button, Container, Row } from 'react-bootstrap'
-import './Item.css'
 
+import './Item.css'
 const Item = ({ id, title, image }) => {
+
     return (
         <>
             <div className="card mb-3">
                 <Container className='cardContainer text-center'>
-
                     <Row className='Item_cardBodyContainer'>
                         <h2 className='card-title'>{title}</h2>
                         <img src={image} alt={title} />
@@ -21,12 +21,7 @@ const Item = ({ id, title, image }) => {
                         </Button>
                     </Row>
                 </Container>
-
-
-
-
             </div>
-
         </>
     )
 }

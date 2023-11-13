@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 
+// react.semantic-ui.com
+import 'semantic-ui-css/semantic.min.css'
+
 // Import Bootstrap css
 import 'bootstrap/dist/css/bootstrap.min.css'
 
