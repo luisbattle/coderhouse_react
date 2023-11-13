@@ -23,12 +23,12 @@ export default function ItemListContainer() {
                     const docs = snapshot.docs.map((doc) => ({
                         id: doc.id, ...doc.data()
                     }))
-                    setTimeout(() => {
+                    setTimeout(() => { // Para Test loaders
                         setLoading(false)
                         setProducts(
                             docs
                         )
-                    }, 900);
+                    }, 200);
 
                 })
         } else { //Get products By Category(By UseParam)

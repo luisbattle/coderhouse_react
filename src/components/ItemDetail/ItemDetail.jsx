@@ -1,4 +1,5 @@
 import { Button, Form, Alert } from "react-bootstrap"
+import Toastify from 'toastify-js'
 
 import "./ItemDetail.css"
 import { useContext, useState } from "react"
@@ -27,8 +28,15 @@ const ItemDetail = ({ product }) => {
 
     const handleOnAdd = () => {
         addItem(product, quantity)
+        showAlert(product);
     }
 
+    const showAlert = (item) => {
+        Toastify({
+            text: `${item.name} agregado al carrito correctamente`,
+            duration: 3000
+        }).showToast();
+    }
 
     return (
         <>

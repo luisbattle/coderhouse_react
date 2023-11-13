@@ -8,6 +8,9 @@ import 'semantic-ui-css/semantic.min.css'
 // Import Bootstrap css
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+// Toastify
+import "toastify-js/src/toastify.css"
+
 // Firebase
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";

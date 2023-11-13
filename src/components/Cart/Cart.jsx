@@ -3,6 +3,8 @@ import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 import { Button, Container } from 'react-bootstrap'
 import { Trash } from 'react-bootstrap-icons';
+import Toastify from 'toastify-js'
+
 
 
 import "./Cart.css"
@@ -20,6 +22,18 @@ const Cart = () => {
         calculateTotalAmount()
     }, [cart])
 
+    const handleOnRemoveItem = (productId, productName) => {
+        console.log("ProductName: ", productName)
+        removeItem(productId)
+        alertRemoveItem(productName)
+
+    }
+    const alertRemoveItem = (item) => {
+        Toastify({
+            text: `${item} se ha eliminado del carrito`,
+            duration: 3000
+        }).showToast();
+    }
 
     return (
         <Container>
@@ -36,7 +50,7 @@ const Cart = () => {
                                         </div>
                                         <div className="col-5">
                                             <p>{product.name}</p>
-                                            <Trash className='btnCartRemoveItem' onClick={() => { removeItem(product.id) }} variant='danger' > X</Trash>
+                                            <Trash className='btnCartRemoveItem' onClick={() => handleOnRemoveItem(product.id, product.name)} variant='danger' > X</Trash>
                                         </div>
                                         <div className="col-5 cartPrice">
                                             <p>CANT: {product.quantity}</p>
